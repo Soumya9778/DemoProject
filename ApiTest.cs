@@ -1,6 +1,7 @@
 using APITest_Dec2022.API_Mappings;
 using APITest_Dec2022.API_Methods;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace APITest_Dec2022
 {
@@ -14,7 +15,7 @@ namespace APITest_Dec2022
             var response = getUser.GetUserList();
             Assert.AreEqual(2, response.Page);
             Assert.AreEqual("Michael", response.Data[0].first_name);
-            System.Console.WriteLine("Test Passed");
+            Console.WriteLine("Test Passed");
         }
 
         [TestMethod]
@@ -23,7 +24,7 @@ namespace APITest_Dec2022
             var createUser = new CreateUserMethod();
             var response = createUser.UserCreation();
             Assert.AreEqual("Raj", response.Name);
-            System.Console.WriteLine("Test Passed");
+            Console.WriteLine("Test Passed");
         }
 
     }
